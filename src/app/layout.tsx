@@ -8,6 +8,18 @@ export const metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+function TopNav() {
+  return (
+    <nav className="flex w-full items-center justify-between p-4 text-xl font-semibold border-b">
+      <div className="flex items-center gap-4">
+        <img className="w-14" src="https://utfs.io/f/e6fb64d2-685c-443f-951e-d871fddf817e-zza8j.png" alt="Grand Lodge Logo" />
+        <h1>Most Worshipful Prince Hall Grand Lodge of Georgia</h1>
+      </div>
+      <div>Sign In</div>
+    </nav>
+  )
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -15,7 +27,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body>{children}</body>
+      <body className="flex flex-col gap-4">
+        <TopNav />
+        {children}
+      </body>
     </html>
   );
 }
